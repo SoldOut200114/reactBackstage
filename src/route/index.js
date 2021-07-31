@@ -1,20 +1,32 @@
-import React, { Suspense, lazy } from 'react';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 
-import { routeArr, pathPrefix } from './route';
-import Loading from '../component/loading';
+import { MyRoute, noOtherComp } from './route';
+import Navbar from '../component/navbar';
+import Header from '../component/header';
 
-export default function MyRoute() {
+export default function MyRouter() {
+    const { pathname } = useLocation();
+    let RouteContent = () => {
+        if (noOtherComp.includes(pathname)) {
+            return <MyRoute />
+        } else {
+            return (
+                <div>
+                    <Header />
+                    <div style={{display: 'flex'}}>
+                        <Navbar />
+                        <div>
+                            <MyRoute />
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+    }
     return (
-        <BrowserRouter>
-            <Suspense fallback={<Loading/>}>
-                <Switch>
-
-                    {
-                        routeArr.map(item => <Route key={item.path} {...item} component={lazy(() => import(`../${item.pathPrefix ? item.pathPrefix : pathPrefix}${item.component}`))}></Route>)
-                    }
-                </Switch>
-            </Suspense>
-        </BrowserRouter>
+        <>
+            <RouteContent />
+        </>
     )
 }

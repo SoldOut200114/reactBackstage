@@ -1,8 +1,12 @@
-import React from 'react'
-import MyRoute from './route'
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+import MyRouter from './route'
 
 export default function App() {
     return (
-        <MyRoute/>
+        <BrowserRouter>
+            <MyRouter/>
+        </BrowserRouter>
     )
 }
