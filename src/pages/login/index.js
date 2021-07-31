@@ -4,7 +4,7 @@ import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
 import './index.less';
-import loginIcon from '../../assets/login/icon.png';
+import loginIcon from '../../assets/common/icon.png';
 
 export default function Login(props) {
 

@@ -1,12 +1,15 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
+import './App.less';
 import MyRouter from './route'
 
 export default function App() {
     return (
         <BrowserRouter>
-            <MyRouter/>
+            <div className='backstage'>
+                <MyRouter/>
+            </div>
         </BrowserRouter>
     )
 }

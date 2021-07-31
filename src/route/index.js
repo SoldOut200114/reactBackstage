@@ -12,11 +12,11 @@ export default function MyRouter() {
             return <MyRoute />
         } else {
             return (
-                <div>
-                    <Header />
-                    <div style={{display: 'flex'}}>
-                        <Navbar />
-                        <div>
+                <div className='flex'>
+                    <Navbar />
+                    <div className='flex flex-suit main'>
+                        <Header />
+                        <div className='flex-suit'>
                             <MyRoute />
                         </div>
                     </div>
