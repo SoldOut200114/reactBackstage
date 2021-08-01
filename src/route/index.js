@@ -1,13 +1,16 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Redirect } from 'react-router-dom';
 
-import { MyRoute, noOtherComp } from './route';
+import { MyRoute, noOtherComp, loginPath } from './route';
 import Navbar from '../component/navbar';
 import Header from '../component/header';
 
 export default function MyRouter() {
     const { pathname } = useLocation();
     let RouteContent = () => {
+        if (!sessionStorage.getItem('isLogin') && pathname !== loginPath) {
+           return <Redirect to='/'/>
+        }
         if (noOtherComp.includes(pathname)) {
             return <MyRoute />
         } else {

@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Loading from '../component/loading';
 
 export const noOtherComp = ['/'];
+export const loginPath = '/';
 
 const pathPrefix = 'pages/';
 const routeArr = [

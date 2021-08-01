@@ -8,12 +8,23 @@ import loginIcon from '../../assets/common/icon.png';
 
 export default function Login(props) {
 
-    const onFinish = (values) => {
-        if (values.username && values.password) {
+    const onFinish = (user) => {
+        if (user.username && user.password) {
+            checkUserInfo(user);
             props.history.push('/home');
         }
-        console.log('Received values of form: ', values);
     };
+
+    const checkUserInfo = (user) => {
+        const keys = user && Object.keys(user);
+
+        keys.forEach(key => {
+            sessionStorage.setItem(key, user[key]);
+        });
+        if (keys.length) {
+            sessionStorage.setItem('isLogin', true);
+        }
+    }
 
     return (
         <div className='login'>
