@@ -6,6 +6,14 @@ import {
     MailOutlined
   } from "@ant-design/icons";
 
+const authMenus = [
+  {
+    key: "/web",
+    icon: <DesktopOutlined />,
+    title: "网站建设"
+  },
+];
+
 export const menus = [
     {
       key: "/home",
