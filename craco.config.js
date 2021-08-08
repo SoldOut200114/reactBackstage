@@ -30,8 +30,7 @@ module.exports = {
     devServer: {
         proxy: {
             "/api": {
-                target: "http://baidu.com",
-                //target: 'http://192.168.9.19:8080',
+                target: 'http://localhost:5000',
                 changeOrigin: true,
                 pathRewrite: {
                     "^/api": ""

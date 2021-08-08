@@ -27,7 +27,7 @@ const getPageInfo = (pathname) => {
 
 const loginOut = (history) => {
   Modal.confirm({
-    title: "Confirm",
+    title: "提示",
     icon: <ExclamationCircleOutlined />,
     content: "确定退出登陆吗？",
     okText: "确认",

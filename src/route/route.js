@@ -16,6 +16,10 @@ const routeArr = [
     {
         path: '/home',
         component: 'home'
+    },
+    {
+        path: '/category',
+        component: 'category'
     }
 ];
 
