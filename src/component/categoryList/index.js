@@ -13,7 +13,7 @@ const defaultValue = {
   name: "一级分类列表",
 };
 
-export default function ProductList(props) {
+export default function CategoryList(props) {
   const [showModal, setShowModal] = useState(false);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [tableData, setTableData] = useState([]);

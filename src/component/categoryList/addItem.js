@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Modal, Select, Input } from "antd";
 
 const { Option } = Select;
@@ -40,6 +40,10 @@ export default function AddItem(props) {
       setOptions([...defaultValue, ...res]);
     });
   };
+
+  useEffect(() => {
+    getOptions();
+  }, []);
 
   return (
     <Modal

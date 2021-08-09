@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import ProductList from "../../component/productList";
+import CategoryList from "../../component/categoryList";
 import './index.less';
 
 export default function Category(props) {
@@ -8,7 +8,7 @@ export default function Category(props) {
 
   return (
     <div className='category'>
-      <ProductList {...defalutValue}></ProductList>
+      <CategoryList {...defalutValue}></CategoryList>
     </div>
   );
 }
